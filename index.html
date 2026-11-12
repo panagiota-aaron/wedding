@@ -10,14 +10,14 @@
   <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/type.css">
   <link rel="stylesheet" href="css/modules.css">
-  <link rel="stylesheet" href="https://use.typekit.net/xxy6mij.css">
+  <link rel="stylesheet" href="https://use.typekit.net/jwq1bmg.css">
   <link rel="shortcut icon" href="favicon.ico"/>
   <script src="https://kit.fontawesome.com/d56986af50.js" crossorigin="anonymous"></script>
 </head>
 <body id="top">
-  <header>
-
-      <nav class="max-length">
+  <header class="banner relative">
+  <img src="images/banner-img.jpg" alt="" class="img-flex">
+      <nav class="max-length pin-c">
         <ul class="nav grid">
           <li class="nano unit xs-1-4 s-1-4 m-1-5 l-1-5 xl-1-5"><a href="projects/index.html#illustrations" class="nav-item" aria-label="A link to the illustrations section of the website.">Illustrations</a></li>
           <li class="nano unit xs-1-4 s-1-4 m-1-5 l-1-5 xl-1-5"><a href="projects/index.html" class="nav-item" aria-label="A link to the projects section of the website.">Projects</a></li>
@@ -40,7 +40,8 @@
             </a>
           </div>
         </div>
-        <h1>Patricia <span class="text-upper">and</span> Aaron</h1>
+        <h1><span class="tena">Patricia</span> <span class="text-upper and">and</span> <span class="tena">Aaron</span></h1>
+        <h2 class="greek-heading" lang="gr">Παναγιώτα <span class="text-upper greek-body">kai</span> Άαρον</h2>
       </nav>
   </header>
   <main>
@@ -54,15 +55,46 @@
               <p><a class="btn" href="#about">More about me</a></p>
           </div>
       </div>
+      <div class="countdown tena text-center">
+        <span id="days">00</span>d :
+        <span id="hours">00</span>h :
+        <span id="minutes">00</span>m :
+        <span id="seconds">00</span>s
+      </div>
+      <script>
+        const targetDate = new Date("2027-10-09T15:00:00").getTime();
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = targetDate - now;
+          if (distance <= 0) {
+            document.querySelector(".countdown").innerHTML = "Expired";
+            clearInterval(timer);
+            return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          document.getElementById("days").textContent = String(days).padStart(2, "0");
+          document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+          document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+          document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+        }
+        updateCountdown();
+        const timer = setInterval(updateCountdown, 1000);
+      </script>
     </div>
+
 
 
 </div>
 
-  
+
 </main>
-<footer class="text-center footer-dark">
-  <p class="push-0 pad-b pico">© 2026 Patricia Danochristos. All Rights Reserved.</p>
+<footer class="text-center">
+  <p class="push-0 pad-b pico">© 2026 Patricia Danochristos and Aaron Hertner. All Rights Reserved.<br>Photography by Scott Wilson Photography.</p>
 </footer>
 
 </body>

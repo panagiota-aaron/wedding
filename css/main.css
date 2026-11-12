@@ -40,11 +40,11 @@ font-style: italic;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    background-color: #3E0303;
-    font-family: "acumin-pro", sans-serif;
+    background-color: #240000;
+    font-family: "kepler-3-display", sans-serif;
     font-weight: 300;
     font-style: normal;
-    color: white;
+    color: #e3cec0;
     scroll-behavior: smooth;
     overflow-x: hidden; /* Hides horizontal overflow */
   }
@@ -58,6 +58,42 @@ font-style: italic;
   navigation: auto;
 }
 
+.greek-body {
+  font-family: "baskerville", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.greek-heading {
+  font-family: "r41-alfabeta-72", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.banner {
+      /* Dark gradient overlay improves text readability */
+      background-image: url("images/banner-img.jpg");
+
+      /* Sizing and positioning */
+      height: 400px; /* Or use 60vh for viewport-relative height */
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      /* Center the text inside the banner */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+      padding-right: 0;
+      padding-left: 0;
+      margin-top: 0;
+    }
+
   .img-flex {
     display: block;
     max-width: 100%;
@@ -69,9 +105,13 @@ font-style: italic;
     font-style: normal;
     text-align: center;
     margin-top: 15px;
-    color: #4b1428;
     margin-bottom: 0;
     font-size: 50em;
+  }
+  .and {
+    font-family: "kepler-3-display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
 
   h2 {
