@@ -95,7 +95,7 @@ font-style: italic;
 
 .banner-img {
   width: 100%;
-  max-height: 750px;
+  height: 600px;
   object-fit: cover;
   object-position: bottom center;
 }
@@ -119,17 +119,23 @@ nav {
 
 .frame-img {
   margin: auto;
+}
+
+.frame-box {
   position: relative;
 }
 
 .frame-body {
   position: absolute;
   left: 50%;
-  top: 25%;
-  position: absolute;
-  width: 60%;
+  top: 18%;
+  width: 80%;
   transform: translateX(-50%);
   color: white;
+}
+
+.main-img {
+  margin: auto;
 }
 
 .banner-text {
@@ -153,6 +159,9 @@ nav {
     margin-bottom: 0;
   }
 
+.h1 {
+  font-size: 2em;
+}
 
   .and {
     font-family: "kepler-3-display", sans-serif;
@@ -193,13 +202,12 @@ nav {
   }
 
   .nav-item {
-    color: #4b1428;
+    color: #e3cec0;
     text-decoration: none;
-    font-family: "lust-didone", serif;
-    font-weight: 400;
     font-style: normal;
     padding: 8px;
     border-bottom: 2px solid transparent;
+    display: inline-block;
 
     transition:
       border-bottom 250ms ease-in-out,
@@ -207,8 +215,8 @@ nav {
   }
 
   .nav-item:hover {
-    border-bottom: 2px solid #89636D;
-    color: #89636D;
+    border-bottom: 2px solid #A8B5C3;
+    color: #A8B5C3;
   }
 
   .nav-logo {
@@ -221,65 +229,78 @@ nav {
     transform: scale(1.2);
   }
 
+  .nav-en {
+    margin-bottom: 0;
+  }
+
 
   body {
     margin: 0;
     overflow: hidden;
   }
 
+.subhead {
+  font-family: "minion-pro-condensed-display", serif;
+  font-weight: 500;
+  font-style: normal;
+}
 
   .logo {
     max-width: 90px;
   }
 
-  .btn {
-    border: 2px solid #4b1428;
-    border-radius: 25px;
-    padding: 1em;
-    color: #4b1428;
-    text-decoration: none;
-    font-family: "lust-didone", serif;
-    font-weight: 400;
+  .btn-en {
+
+  }
+
+  .btn-gr {
+    font-family: "minion-pro-condensed-display", serif;
+    font-weight: 500;
     font-style: normal;
+  }
+
+  .btn-container {
+
+  }
+
+  .btn {
+    border: 2px solid white;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
 
     transition:
       background-color 250ms ease-in-out,
-      color 250ms ease-in-out;
+      color 250ms ease-in-out,
+      border 250ms ease-in-out;
   }
 
   .btn:hover {
-    background-color: #4b1428;
-    color: #efeae1;
+    background-color: #A8B5C3;
+    color: #240000;
+    border: 2px solid #A8B5C3;
   }
 
 
-  .btn-container {
+
+
+.top-btn-container {
     text-align: center;
     margin-top: 2em;
-  }
-
-  .top-btn-container, .top-btn-container-projects {
-    text-align: center;
-    margin-top: 2em;
-  }
-
-  .top-btn-container {
-    padding-bottom: 30px;
   }
 
   .top-btn {
     text-decoration: none;
-    color: white;
+    color: #5d4a48;
+
+    transition:
+      color 250ms ease-in-out;
   }
 
-  .top-btn-projects {
-    color: #4b1428;
-    text-decoration: none;
-    transition: all 200ms ease;
-  }
-
-  .top-btn-projects:hover {
-    color: #89636D;
+  .top-btn:hover {
+    color: #A8B5C3;
   }
 
   .link-next, .link-prev {
@@ -292,69 +313,29 @@ nav {
 
   }
 
-  .intro-container {
-    margin-top: 60px;
-  }
-
-  .intro-paragraph {
-    margin-top: 25px;
-    margin-bottom: 50px;
-  }
-
   .page-container {
     position: relative;
   }
 
-  .left-flower {
-    position: absolute;
-    top: 0%;
-    left: -15%;
-    z-index: -1;
-    width: 250px;
-    display: block;
-    object-fit: cover;
+  .countdown {
+    margin-top: 1000px;
   }
 
-  .right-flower {
-    position: absolute;
-    bottom: 30%;
-    right: -25%;
-    z-index: -1;
-    width: 250px;
-    display: block;
-    object-fit: cover;
+  #days, #hours, #minutes, #seconds {
+    font-size: 3.5rem;
   }
 
-  .contact-container {
-    background-color: #89636D;
-    margin-top: 80px;
-    color: white;
-    padding-bottom: 30px;
+  .countdown-time {
+    font-size: 1.3rem;
   }
 
-  .contact-box {
-    position: relative;
+  .countdown-time-gr {
+    font-size: 0.7rem;
   }
 
-  .email-flower {
-    position: absolute;
-    top: 30%;
-    right: 0%;
-    width: 115px;
-  }
-
-  .email-img {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-  }
-
-  .illustrations-heading {
-    padding-top: 40px;
-    color: white;
-    text-align: center;
-  }
-
+footer {
+  color: #5d4a48;
+}
 
 }
 @media only screen and (min-width: 25em) {
@@ -371,7 +352,15 @@ nav {
 
   .frame-body {
     width: 50%;
+    top: 20%;
   }
+
+  .banner-img {
+    height: 700px;
+  }
+
+  .btn {
+    width: 95%;
 }
 
 @media only screen and (min-width: 38em) {
@@ -380,8 +369,12 @@ nav {
     line-height: 1.4;
   }
 
+  .banner-img {
+    height: 900px;
+  }
+
   .logo {
-    max-width: 90px;
+    max-width: 100px;
   }
 
   .h1 {
@@ -396,7 +389,20 @@ nav {
   }
 
   .frame-body {
-    width: 35%;
+    width: 300px;
+    top: 20%;
+  }
+
+  #days, #hours, #minutes, #seconds {
+    font-size: 4rem;
+  }
+
+  .countdown-time {
+    font-size: 1.3rem;
+  }
+
+  .countdown-time-gr {
+    font-size: 0.7rem;
   }
 
 }
@@ -409,7 +415,7 @@ nav {
 
 
   .logo {
-    max-width: 110px;
+    max-width: 100px;
   }
 
   .h1 {
@@ -425,6 +431,11 @@ nav {
 
   .frame-body {
     width: 30%;
+    top: 20%;
+  }
+
+  .btn {
+    width: 350px;
   }
 
 }
@@ -442,8 +453,8 @@ nav {
     font-size: 1.8rem;
   }
 
-  .frame-body {
-    top: 25%;
+  .logo {
+    max-width: 110px;
   }
 
   #days, #hours, #minutes, #seconds {
@@ -470,8 +481,16 @@ nav {
   }
 
   .frame-body {
-    top: 20%;
+    top: 18%;
     width: 28%;
+    margin-left: auto;
   }
+
+  .btn {
+    width: 400px;
+  }
+
+
+
 
 }
