@@ -59,7 +59,7 @@ font-style: italic;
 }
 
 .greek-body {
-  font-family: "itc-bodoni-seventytwo-pro", sans-serif;
+  font-family: "minion-pro-display", serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -122,6 +122,16 @@ nav {
   position: relative;
 }
 
+.frame-body {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  position: absolute;
+  width: 60%;
+  transform: translateX(-50%);
+  color: white;
+}
+
 .banner-text {
   top: 25%;
   left: 50%;
@@ -155,6 +165,10 @@ nav {
     letter-spacing: 0.1em;
   }
 
+  .blue {
+    color: #A8B5C3;
+  }
+
   h2 {
     font-family: "lust-didone", serif;
     font-weight: 400;
@@ -178,9 +192,6 @@ nav {
 
   }
 
-  header {
-    margin-top: 30px
-  }
   .nav-item {
     color: #4b1428;
     text-decoration: none;
@@ -210,42 +221,12 @@ nav {
     transform: scale(1.2);
   }
 
-  .project-item, .case-study-item {
-    display: inline-block;
-    transition: transform 0.2s ease;
-    transform: scale(1);
-  }
-
-  .project-item:hover {
-    transform: scale(1.1);
-  }
-
-  .case-study-item:hover {
-    transform: scale(1.05);
-  }
-
-  .email-icon {
-    display: inline-block;
-    transition: transform 0.2s ease;
-    transform: scale(1);
-  }
-
-  .email-icon:hover {
-    transform: scale(1.2);
-  }
 
   body {
     margin: 0;
     overflow: hidden;
   }
 
-  .offering {
-    color: #89636D;
-  }
-
-  .accent-colour {
-    color: #89636D;
-  }
 
   .logo {
     max-width: 90px;
@@ -305,52 +286,6 @@ nav {
     text-decoration: none;
   }
 
-  .link-heading1{
-    color: #4b1428;
-    font-family: "lust-didone", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  .link-heading2 {
-    color: #89636D;
-  }
-
-  .link-1 {
-  border-right: 1px solid #89636D;
-  padding-right: 20px
-
-}
-
-.link-2 {
-  border-left: 1px solid #89636D;
-  padding-left: 20px
-}
-
-.link-prev h3, .link-prev p{
-  transition: all 200ms ease;
-}
-
-.link-prev:hover h3 {
-  transform: translateX(-0.75em);
-}
-
-.link-prev:hover p {
-  transform: translateX(0.75em);
-}
-
-.link-next h3, .link-next p{
-  transition: all 200ms ease;
-}
-
-.link-next:hover h3 {
-  transform: translateX(0.75em);
-}
-
-.link-next:hover p {
-  transform: translateX(-0.75em);
-}
-
   .active {
     border-bottom: 2px solid #89636D;
     color: #89636D;
@@ -364,21 +299,6 @@ nav {
   .intro-paragraph {
     margin-top: 25px;
     margin-bottom: 50px;
-  }
-
-  .projects-container h2 {
-    color: #89636D;
-    text-align: center;
-    margin-top: 80px;
-  }
-
-  .about-container {
-    margin-top: 80px;
-  }
-
-  .about-heading {
-    color: #89636D;
-    margin-top: 40px;
   }
 
   .page-container {
@@ -436,12 +356,6 @@ nav {
   }
 
 
-  #about, #contact {
-    display: flex;
-    align-items: center;
-  }
-
-
 }
 @media only screen and (min-width: 25em) {
   .h1 {
@@ -453,6 +367,10 @@ nav {
     left: 50%;
     position: absolute;
     transform: translateX(-50%);
+  }
+
+  .frame-body {
+    width: 50%;
   }
 }
 
@@ -475,6 +393,10 @@ nav {
     left: 50%;
     position: absolute;
     transform: translateX(-50%);
+  }
+
+  .frame-body {
+    width: 35%;
   }
 
 }
@@ -500,6 +422,11 @@ nav {
     position: absolute;
     transform: translateX(-50%);
   }
+
+  .frame-body {
+    width: 30%;
+  }
+
 }
 
 @media only screen and (min-width: 90em) {
@@ -515,6 +442,9 @@ nav {
     font-size: 1.8rem;
   }
 
+  .frame-body {
+    top: 25%;
+  }
 
   #days, #hours, #minutes, #seconds {
     font-size: 5rem;
@@ -537,6 +467,11 @@ nav {
     left: 50%;
     position: absolute;
     transform: translateX(-50%);
+  }
+
+  .frame-body {
+    top: 20%;
+    width: 28%;
   }
 
 }
