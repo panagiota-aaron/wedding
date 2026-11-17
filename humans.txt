@@ -2,9 +2,8 @@
 
 # TEAM
 
-Designer & Developer: Patricia Danochristos <pdano007@gmail.com>
-Site: http://pdano.ca
-GitHub: https://github.com/patricia568
+
+GitHub: https://github.com/panagiota-aaron
 Location: Ottawa, Canada
 
 ---
