@@ -142,6 +142,11 @@ nav {
   color: white;
 }
 
+.venue-img {
+  width: 200px;
+  margin: auto;
+}
+
 .main-img {
   margin: auto;
 }
@@ -407,6 +412,10 @@ nav {
 
   .nav-couple {
     margin-top: 34px;
+  }
+
+  .frame-img {
+    width: 450px;
   }
 
 }
