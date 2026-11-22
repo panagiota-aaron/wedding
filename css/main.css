@@ -327,6 +327,12 @@ nav {
 
   .link {
     color: #A8B5C3;
+    transition:
+      color 250ms ease-in-out;
+  }
+
+  .link:hover {
+    color: #E8C3BB;
   }
 
 .top-btn-container {
@@ -346,9 +352,6 @@ nav {
     color: #A8B5C3;
   }
 
-  .link-next, .link-prev {
-    text-decoration: none;
-  }
 
   .active {
     border-bottom: 2px solid #89636D;
