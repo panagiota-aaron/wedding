@@ -14,6 +14,23 @@
   <link rel="shortcut icon" href="favicon.ico"/>
   <script src="https://kit.fontawesome.com/d56986af50.js" crossorigin="anonymous"></script>
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+});
+</script>
   <body id="top">
     <header class="banner">
     <img src="images/banner-img.jpg" alt="" class="banner-img img-flex push-2">
@@ -53,7 +70,7 @@
           </a>
         </li>
       </ul>-->
-      <ul class="nav grid">
+      <ul class="nav grid fade-in">
         <li class="unit xs-1-4 s-1-4 m-1-5 l-1-5 xl-1-5">
         </li>
         <li class="unit xs-1-4 s-1-4 m-1-5 l-1-5 xl-1-5">
@@ -81,10 +98,10 @@
       </div>
     </nav>
     <div class="banner-text text-center">
-      <h1 class="push-0"><span class="h1">Patricia</span>&nbsp;&nbsp;<span class="text-upper and zetta">and</span>&nbsp;&nbsp;<span class="h1">Aaron</span></h1>
-      <h2 class="greek-heading push-2" lang="el"><span class="h1-gr">Παναγιώτα</span>&nbsp;&nbsp;<span class="and-gr text-upper greek-body kilo">και</span>&nbsp;&nbsp;<span class="h1-gr">Άαρον</span></h2>
-      <h2 class="blue small-caps text-center nina push-0 subhead">You've wandered into our gallery</h2>
-      <h3 class="blue text-center giga greek-heading push-2" lang="el">Περιπλανηθήκατε στην γκαλερί μας</h3>
+      <h1 class="fade-in push-0"><span class="h1">Patricia</span>&nbsp;&nbsp;<span class="text-upper and zetta">and</span>&nbsp;&nbsp;<span class="h1">Aaron</span></h1>
+      <h2 class="fade-in greek-heading push-2" lang="el"><span class="h1-gr">Παναγιώτα</span>&nbsp;&nbsp;<span class="and-gr text-upper greek-body kilo">και</span>&nbsp;&nbsp;<span class="h1-gr">Άαρον</span></h2>
+      <h2 class="fade-in blue small-caps text-center nina push-0 subhead">You've wandered into our gallery</h2>
+      <h3 class="fade-in blue text-center giga greek-heading push-2" lang="el">Περιπλανηθήκατε στην γκαλερί μας</h3>
     </div>
 
   </header>
@@ -92,31 +109,31 @@
       <div class="wrapper photos">
         <div class="grid gutter">
           <div class="unit unit xs-1 s-1 m-1 l-1 xl-1">
-            <img class="img-flex island-1-2" src="images/img8.jpg" alt="">
+            <img class="fade-in img-flex island-1-2" src="images/img8.jpg" alt="">
           </div>
           <div class="unit xs-1 s-1-2 m-1-2 l-1-2 xl-1-2">
-            <img class="img-flex island-1-2" src="images/img3.jpg" alt="">
-            <img class="img-flex island-1-2" src="images/img15.jpg" alt="">
-            <img class="img-flex island-1-2" src="images/img11.jpg" alt="">
-            <img class="img-flex island-1-2" src="images/img12.jpg" alt="">
+            <img class="fade-in img-flex island-1-2" src="images/img3.jpg" alt="">
+            <img class="fade-in img-flex island-1-2" src="images/img15.jpg" alt="">
+            <img class="fade-in img-flex island-1-2" src="images/img11.jpg" alt="">
+            <img class="fade-in img-flex island-1-2" src="images/img12.jpg" alt="">
           </div>
           <div class="unit xs-1 s-1-2 m-1-2 l-1-2 xl-1-2">
-            <img class="img-flex island-1-2" src="images/img14.jpg" alt="">
-            <img class="img-flex island-1-2" src="images/img4.jpg" alt="">
-            <img class="img-flex island-1-2" src="images/img13.jpg" alt="">
-            <img class="img-flex island-1-2" src="images/img9.jpg" alt="">
+            <img class="fade-in img-flex island-1-2" src="images/img14.jpg" alt="">
+            <img class="fade-in img-flex island-1-2" src="images/img4.jpg" alt="">
+            <img class="fade-in img-flex island-1-2" src="images/img13.jpg" alt="">
+            <img class="fade-in img-flex island-1-2" src="images/img9.jpg" alt="">
           </div>
           <div class="unit unit xs-1 s-1 m-1 l-1 xl-1">
-            <img class="img-flex island-1-2" src="images/img6.jpg" alt="">
+            <img class="fade-in img-flex island-1-2" src="images/img6.jpg" alt="">
           </div>
           <div class="unit xs-1 s-1-2 m-1-2 l-1-2 xl-1-2">
-            <img class="img-flex island-1-2" src="images/img10.jpg" alt="">
+            <img class="fade-in img-flex island-1-2" src="images/img10.jpg" alt="">
           </div>
           <div class="unit xs-1 s-1-2 m-1-2 l-1-2 xl-1-2">
-            <img class="img-flex island-1-2" src="images/img7.jpg" alt="">
+            <img class="fade-in img-flex island-1-2" src="images/img7.jpg" alt="">
           </div>
           <div class="unit unit xs-1 s-1 m-1 l-1 xl-1">
-            <img class="img-flex island-1-2" src="images/img5.jpg" alt="">
+            <img class="fade-in img-flex island-1-2" src="images/img5.jpg" alt="">
           </div>
         </div>
 
