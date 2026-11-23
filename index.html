@@ -14,6 +14,24 @@
   <link rel="shortcut icon" href="favicon.ico"/>
   <script src="https://kit.fontawesome.com/d56986af50.js" crossorigin="anonymous"></script>
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+});
+</script>
+
   <body id="top">
       <header class="banner">
       <img src="images/banner-img.jpg" alt="" class="banner-img img-flex push-2">
@@ -95,14 +113,14 @@
     <div class="gutter push-2">
       <h2 class="blue small-caps text-center tena push-0 subhead">Our favourite people, all in one place.</h2>
       <h3 class="blue text-center tera greek-heading push-2" lang="el">Τα αγαπημένα μας πρόσωπα, όλα σε ένα μέρος.</h3>
-      <div class="frame-box push-2">
+      <div class="frame-box push-2 fade-in">
         <img src="images/blue-frame.png" alt="" class="frame-img img-flex push-2">
         <p class="frame-body text-center micro"><strong>Welcome!</strong><br> We're so happy to celebrate our special day with you. We've created this website as a place to share all the details surrounding our wedding day. As the day gets closer, we'll be adding more information here to keep you in the loop and prepare you as much as possible. You can expect to receive your formal invitation in the mail in the summer of 2027.<br><br>
         <span class="greek-body pico"><strong>Καλώς ήρθατε!</strong><br>Χαιρόμαστε ιδιαίτερα που θα γιορτάσουμε την ξεχωριστή αυτή ημέρα μαζί σας. Δημιουργήσαμε αυτόν τον ιστότοπο για να μοιραστούμε όλες τις λεπτομέρειες σχετικά με την ημέρα του γάμου μας. Καθώς πλησιάζει η ημερομηνία, θα προσθέτουμε περισσότερες πληροφορίες, ώστε να είστε πλήρως ενημερωμένοι και κατάλληλα προετοιμασμένοι. Μπορείτε να αναμένετε την επίσημη πρόσκλησή σας ταχυδρομικώς, το καλοκαίρι του 2027.</span>
         </p>
 
       </div>
-            <div class="grid grid-middle pad-t-2">
+            <div class="grid grid-middle pad-t-2 fade-in">
               <div class="unit xs-1 s-1 m-1 l-1-2 xl-1-2">
                 <img src="images/img1.jpg" alt="" class="img-flex gutter main-img">
               </div>
@@ -121,24 +139,25 @@
             </div>
           </div>
       </div>
-      <div class="max-length">
+
+      <div class="max-length fade-in">
       <div class="pad-t-2">
         <div class="gutter">
           <img src="images/img2.png" alt="" class="push-2 img-flex gutter">
         </div>
       </div>
-
     </div>
-    <div class="max-length push-2 gutter">
+
+    <div class="max-length push-2 gutter fade-in">
       <h2 class="blue small-caps text-center tena push-0 subhead">A note about gifts</h2>
       <h3 class="blue text-center tera greek-heading push-2" lang="el">Μια σημείωση σχετικά με τα δώρα</h3>
       <p class="text-center mega">Having you celebrate this special day with us is more than enough. As such, we have chosen not to have a formal gift registry. Should you wish to contribute, a wishing well will be available at the reception venue for cards and well wishes. We appreciate your generosity.</p>
       <p class="text-center greek-body nano push-2">Το ότι θα γιορτάσετε αυτή την ξεχωριστή ημέρα μαζί μας είναι υπεραρκετό. Για τον λόγο αυτό, επιλέξαμε να μην δημιουργήσουμε λίστα δώρων. Αν παρ' όλα αυτά επιθυμείτε να προσφέρετε κάτι, στον χώρο της δεξίωσης θα υπάρχει ειδικό κουτί για κάρτες και ευχές. Σας ευχαριστούμε για τη γενναιοδωρία σας.</p>
     </div>
 
-      <h2 class="blue small-caps text-center tena push-0 subhead">We can’t wait to celebrate with you in…</h2>
-      <h3 class="blue text-center tera greek-heading" lang="el">Ανυπομονούμε να γιορτάσουμε μαζί σας σε…</h3>
-      <div class="max-length gutter">
+      <h2 class="blue small-caps text-center tena push-0 subhead fade-in">We can’t wait to celebrate with you in…</h2>
+      <h3 class="blue text-center tera greek-heading fade-in" lang="el">Ανυπομονούμε να γιορτάσουμε μαζί σας σε…</h3>
+      <div class="max-length gutter fade-in">
         <div class="countdown text-center push-2 grid">
           <div class="unit xs-1-4 time-brdr">
             <span id="days" class="push-0">00</span><br>
