@@ -14,11 +14,28 @@
   <link rel="shortcut icon" href="favicon.ico"/>
   <script src="https://kit.fontawesome.com/d56986af50.js" crossorigin="anonymous"></script>
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+});
+</script>
   <body id="top">
     <header class="">
 
     <nav class="max-length">
-      <!--<ul class="nav grid">
+      <ul class="nav grid fade-in">
 
         <li class="unit xs-1-3 s-1-3 m-1-5 unit-offset-m-1 l-1-5 unit-offset-l-1 xl-1-5 unit-offset-xl-1">
           <a href="details.html" class="active nav-item" aria-label="">
@@ -35,73 +52,65 @@
         </li>
         <li class="unit xs-1-3 s-1-3 m-1-5 l-1-5 xl-1-5">
           <a href="faq.html" class="nav-item" aria-label="">
-            <span class="push-0 milli text-upper nav-en">FAQ</span><br>
-            <span lang="el" class="pico greek-body">Ερωτήσεις</span>
+            <span class="push-0 milli text-upper nav-en fade-in">FAQ</span><br>
+            <span lang="el" class="pico greek-body fade-in">Ερωτήσεις</span>
           </a>
         </li>
 
-      </ul>-->
-      <ul class="nav">
-        <li class="">
-          <a href="index.html" class="nav-logo" aria-label="A link to the home page of the website.">
-            <i class="icon">
-              <img class="logo img-flex" src="images/logo.png" alt="A personal logo for the website">
-            </i>
-          </a>
-        </li>
       </ul>
+
     </nav>
 
     <div class="text-center">
-      <h1 class="push-2 h1 h1-faq">Details</h1>
-      <h2 class="greek-body push-2" lang="el">Λεπτομέρειες</h2>
+      <h1 class="push-2 h1 h1-faq fade-in">Details</h1>
+      <h2 class="greek-body push-2 fade-in" lang="el">Λεπτομέρειες</h2>
     </div>
 
   </header>
     <main>
       <div class="max-length push-2 gutter">
-        <h2 class="blue small-caps text-center nina push-0 subhead">The venues</h2>
-        <h3 class="blue text-center giga greek-heading push-2" lang="el">Οι χώροι</h3>
-        <img src="images/place-holder.png" class="img-flex venue-img push">
-        <p class="text-center mega">Our wedding ceremony will take place at the Greek Orthodox Church in Ottawa, where we will be joined in marriage through a traditional ceremony. We are beyond happy to have you there to witness it!</p>
-        <p class="text-center greek-body nano">Η γαμήλια τελετή μας θα πραγματοποιηθεί στην Ελληνορθόδοξη Εκκλησία στην Οτάβα, όπου θα ενωθούμε με τα δεσμά του γάμου μέσω μιας παραδοσιακής τελετής. Είμαστε κατενθουσιασμένοι που θα είστε εκεί για να γίνετε μάρτυρες αυτής της στιγμής!</p>
-        <p class="push-2 text-center"><strong>Dormition of the Virgin Mary Greek Orthodox Church</strong><br>
+        <h2 class="blue small-caps text-center nina push-0 subhead fade-in">The venues</h2>
+        <h3 class="blue text-center giga greek-heading push-2 fade-in" lang="el">Οι χώροι</h3>
+        <img src="images/place-holder.png" class="img-flex venue-img push fade-in">
+        <p class="text-center mega fade-in">Our wedding ceremony will take place at the Greek Orthodox Church in Ottawa, where we will be joined in marriage through a traditional ceremony. We are beyond happy to have you there to witness it!</p>
+        <p class="text-center greek-body nano fade-in">Η γαμήλια τελετή μας θα πραγματοποιηθεί στην Ελληνορθόδοξη Εκκλησία στην Οτάβα, όπου θα ενωθούμε με τα δεσμά του γάμου μέσω μιας παραδοσιακής τελετής. Είμαστε κατενθουσιασμένοι που θα είστε εκεί για να γίνετε μάρτυρες αυτής της στιγμής!</p>
+        <p class="push-2 text-center fade-in"><strong>Dormition of the Virgin Mary Greek Orthodox Church</strong><br>
           1315 Prince of Wales Dr, Ottawa, ON, K2C 1N2<br>
         <a href="https://maps.app.goo.gl/tHzCJSsk44kWu53f7" target=_blank class="btn-small">Open in Google Maps</a></p>
 
-        <img src="images/place-holder.png" class="img-flex venue-img push">
-        <p class="text-center mega">We happily invite guests to join us for a cocktail hour and plated dinner following the wedding ceremony at the Fairmont Chateau Laurier located in the Ottawa downtown core. Hours of reminiscing and shameless dancing with our loved ones will conclude the night.</p>
-        <p class="text-center greek-body nano">Με χαρά προσκαλούμε τους καλεσμένους μας σε μια ώρα για κοκτέιλ και δείπνο με σερβιριστά πιάτα, αμέσως μετά την τελετή του γάμου, στο Fairmont Château Laurier, στην καρδιά της Οτάβα. Η βραδιά θα ολοκληρωθεί με στιγμές γεμάτες αναμνήσεις και ξέφρενο χορό με τα αγαπημένα μας πρόσωπα.</p>
-        <p class="push-2 text-center"><strong>Fairmont Château Laurier</strong><br>
+        <img src="images/place-holder.png" class="img-flex venue-img push fade-in">
+        <p class="text-center mega fade-in">We happily invite guests to join us for a cocktail hour and plated dinner following the wedding ceremony at the Fairmont Chateau Laurier located in the Ottawa downtown core. Hours of reminiscing and shameless dancing with our loved ones will conclude the night.</p>
+        <p class="text-center greek-body nano fade-in">Με χαρά προσκαλούμε τους καλεσμένους μας σε μια ώρα για κοκτέιλ και δείπνο με σερβιριστά πιάτα, αμέσως μετά την τελετή του γάμου, στο Fairmont Château Laurier, στην καρδιά της Οτάβα. Η βραδιά θα ολοκληρωθεί με στιγμές γεμάτες αναμνήσεις και ξέφρενο χορό με τα αγαπημένα μας πρόσωπα.</p>
+        <p class="push-2 text-center fade-in"><strong>Fairmont Château Laurier</strong><br>
         1 Rideau St. Ottawa, ON, K1N 8S7<br>
         <a href="https://maps.app.goo.gl/knZyCVaN4NvA7aAa8" target=_blank class="btn-small">Open in Google Maps</a></p>
         <div id="parking"></div>
-        <h2 class="blue small-caps text-center nina push-0 subhead">Reception parking</h2>
-        <h3 class="blue text-center giga greek-heading push-2" lang="el">Στάθμευση</h3>
+        <h2 class="blue small-caps text-center nina push-0 subhead fade-in">Reception parking</h2>
+        <h3 class="blue text-center giga greek-heading push-2 fade-in" lang="el">Στάθμευση</h3>
 
-        <p class="text-center mega">Parking downtown can be tricky! We've highlighted some downtown parking options for you in the map below to make things easier. These parking garages are all nearby to the Fairmont Château Laurier. Valet parking is available to guests of the hotel only. Wedding guests are encouraged to use one of the options below.</p>
-        <p class="text-center greek-body nano">Η στάθμευση στο κέντρο της πόλης μπορεί να είναι δύσκολη υπόθεση! Για να σας διευκολύνουμε, έχουμε επισημάνει στον παρακάτω χάρτη ορισμένες επιλογές στάθμευσης στο κέντρο. Όλοι αυτοί οι χώροι στάθμευσης βρίσκονται κοντά στο ξενοδοχείο Fairmont Château Laurier. Η υπηρεσία στάθμευσης από προσωπικό (valet parking) παρέχεται αποκλειστικά στους ενοίκους του ξενοδοχείου. Οι καλεσμένοι του γάμου παρακαλούνται να επιλέξουν μία από τις παρακάτω επιλογές.</p>
-        <div class="map-container push-2">
+        <p class="text-center mega fade-in">Parking downtown can be tricky! We've highlighted some downtown parking options for you in the map below to make things easier. These parking garages are all nearby to the Fairmont Château Laurier. Valet parking is available to guests of the hotel only. Wedding guests are encouraged to use one of the options below.</p>
+        <p class="text-center greek-body nano fade-in">Η στάθμευση στο κέντρο της πόλης μπορεί να είναι δύσκολη υπόθεση! Για να σας διευκολύνουμε, έχουμε επισημάνει στον παρακάτω χάρτη ορισμένες επιλογές στάθμευσης στο κέντρο. Όλοι αυτοί οι χώροι στάθμευσης βρίσκονται κοντά στο ξενοδοχείο Fairmont Château Laurier. Η υπηρεσία στάθμευσης από προσωπικό (valet parking) παρέχεται αποκλειστικά στους ενοίκους του ξενοδοχείου. Οι καλεσμένοι του γάμου παρακαλούνται να επιλέξουν μία από τις παρακάτω επιλογές.</p>
+        <div class="map-container push-2 fade-in">
         <iframe src="https://www.google.com/maps/d/embed?mid=1f9YjCJPztpNd-bo2HFXHb_uPdxazuQE&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
     </div>
 
-        <h2 class="blue small-caps text-center nina push-0 subhead">Where to stay</h2>
-        <h3 class="blue text-center giga greek-heading push-2" lang="el">Πού να μείνετε</h3>
+        <h2 class="blue small-caps text-center nina push-0 subhead fade-in">Where to stay</h2>
+        <h3 class="blue text-center giga greek-heading push-2 fade-in" lang="el">Πού να μείνετε</h3>
         <p class="text-center mega">We invite guests to book rooms for accommodation through the <a href="https://book.passkey.com/go/PatriciaAaronwedding" class="link" target=_blank>Fairmont Château Laurier booking portal</a> should they wish to stay overnight at the hotel. Guests are encouraged to book as soon as they know their availability for the wedding date. If plans are still up in the air, it’s still recommended to reserve early, as rooms can be cancelled without penalty up to 72 hours prior to check-in. Other hotels nearby may also be of interest to guests, such at the <a href="https://metcalfehotel.com/ottawa/" class="link" target=_blank>Metcalfe Hotel</a> and <a href="https://www.germainhotels.com/en/alt-hotel/ottawa" class="link" target=_blank>Alt Hotel</a>.</p>
-        <p class="text-center greek-body nano">Προσκαλούμε τους καλεσμένους που επιθυμούν να διανυκτερεύσουν στο ξενοδοχείο Fairmont Château Laurier να κάνουν κράτηση μέσω της <a href="https://book.passkey.com/go/PatriciaAaronwedding" class="link" target=_blank>ειδικής πλατφόρμας κρατήσεων του ξενοδοχείου</a>. Συνιστούμε στους καλεσμένους να προχωρήσουν σε κράτηση μόλις επιβεβαιώσουν τη διαθεσιμότητά τους για την ημερομηνία του γάμου. Ακόμη κι αν τα σχέδιά σας δεν είναι ακόμα οριστικά, σας προτείνουμε να κάνετε κράτηση νωρίς, καθώς υπάρχει δυνατότητα ακύρωσης χωρίς επιβάρυνση έως και 72 ώρες πριν από την άφιξη. Εναλλακτικά, ενδιαφέρον για τους καλεσμένους μπορεί να παρουσιάζουν και άλλα ξενοδοχεία στην περιοχή, όπως το <a href="https://metcalfehotel.com/ottawa/" class="link" target=_blank>Metcalfe Hotel</a> και το <a href="https://www.germainhotels.com/en/alt-hotel/ottawa" class="link" target=_blank>Alt Hotel</a>.</p>
+        <p class="text-center greek-body nano fade-in">Προσκαλούμε τους καλεσμένους που επιθυμούν να διανυκτερεύσουν στο ξενοδοχείο Fairmont Château Laurier να κάνουν κράτηση μέσω της <a href="https://book.passkey.com/go/PatriciaAaronwedding" class="link" target=_blank>ειδικής πλατφόρμας κρατήσεων του ξενοδοχείου</a>. Συνιστούμε στους καλεσμένους να προχωρήσουν σε κράτηση μόλις επιβεβαιώσουν τη διαθεσιμότητά τους για την ημερομηνία του γάμου. Ακόμη κι αν τα σχέδιά σας δεν είναι ακόμα οριστικά, σας προτείνουμε να κάνετε κράτηση νωρίς, καθώς υπάρχει δυνατότητα ακύρωσης χωρίς επιβάρυνση έως και 72 ώρες πριν από την άφιξη. Εναλλακτικά, ενδιαφέρον για τους καλεσμένους μπορεί να παρουσιάζουν και άλλα ξενοδοχεία στην περιοχή, όπως το <a href="https://metcalfehotel.com/ottawa/" class="link" target=_blank>Metcalfe Hotel</a> και το <a href="https://www.germainhotels.com/en/alt-hotel/ottawa" class="link" target=_blank>Alt Hotel</a>.</p>
 
         <div id="transportation"></div>
-        <img src="images/place-holder.png" class="img-flex venue-img push">
-        <h2 class="blue small-caps text-center nina push-0 subhead">Transportation</h2>
-        <h3 class="blue text-center giga greek-heading push-2" lang="el">Μεταφορά</h3>
+        <img src="images/place-holder.png" class="img-flex venue-img push fade-in">
+        <h2 class="blue small-caps text-center nina push-0 subhead fade-in">Transportation</h2>
+        <h3 class="blue text-center giga greek-heading push-2 fade-in" lang="el">Μεταφορά</h3>
 
-        <p class="text-center mega">For guests staying both Friday and Saturday night, we have prepared a shuttle service to transport you to the church for the ceremony, and back to the hotel for the cocktail hour and reception. This service is reserved only for immediate family, the bridal party, and those staying both nights at the Fairmont Château Laurier. These spots will be confirmed on a first come, first serve basis. Priority will be given to those who send their RSVP cards the earliest. You may indicate if you will require a shuttle service along with your RSVP card.</p>
-        <p class="text-center greek-body nano">Για τους καλεσμένους που διαμένουν τόσο το βράδυ της Παρασκευής όσο και το βράδυ του Σαββάτου, έχουμε μεριμνήσει για υπηρεσία μεταφοράς (shuttle) προς την εκκλησία για την τελετή, καθώς και για την επιστροφή στο ξενοδοχείο για το κοκτέιλ και τη δεξίωση. Η υπηρεσία αυτή αφορά αποκλειστικά όσους διαμένουν και τις δύο βραδιές που θα διατεθούν σε σειρά προτεραιότητας. Προτεραιότητα θα δοθεί σε όσους αποστείλουν νωρίτερα την κάρτα επιβεβαίωσης συμμετοχής (RSVP). Μπορείτε να δηλώσετε εάν επιθυμείτε να κάνετε χρήση της υπηρεσίας μεταφοράς, κατά την αποστολή της κάρτας επιβεβαίωσης συμμετοχής σας.</p>
+        <p class="text-center mega fade-in">For guests staying both Friday and Saturday night, we have prepared a shuttle service to transport you to the church for the ceremony, and back to the hotel for the cocktail hour and reception. This service is reserved only for immediate family, the bridal party, and those staying both nights at the Fairmont Château Laurier. These spots will be confirmed on a first come, first serve basis. Priority will be given to those who send their RSVP cards the earliest. You may indicate if you will require a shuttle service along with your RSVP card.</p>
+        <p class="text-center greek-body nano fade-in">Για τους καλεσμένους που διαμένουν τόσο το βράδυ της Παρασκευής όσο και το βράδυ του Σαββάτου, έχουμε μεριμνήσει για υπηρεσία μεταφοράς (shuttle) προς την εκκλησία για την τελετή, καθώς και για την επιστροφή στο ξενοδοχείο για το κοκτέιλ και τη δεξίωση. Η υπηρεσία αυτή αφορά αποκλειστικά όσους διαμένουν και τις δύο βραδιές που θα διατεθούν σε σειρά προτεραιότητας. Προτεραιότητα θα δοθεί σε όσους αποστείλουν νωρίτερα την κάρτα επιβεβαίωσης συμμετοχής (RSVP). Μπορείτε να δηλώσετε εάν επιθυμείτε να κάνετε χρήση της υπηρεσίας μεταφοράς, κατά την αποστολή της κάρτας επιβεβαίωσης συμμετοχής σας.</p>
 
-        <h2 class="blue small-caps text-center nina push-0 subhead">Dress code</h2>
-        <h3 class="blue text-center giga greek-heading push" lang="el">Κώδικας ενδυμασίας</h3>
+        <h2 class="blue small-caps text-center nina push-0 subhead fade-in">Dress code</h2>
+        <h3 class="blue text-center giga greek-heading push fade-in" lang="el">Κώδικας ενδυμασίας</h3>
 
-        <div class="grid">
+        <div class="grid fade-in">
           <div class="unit xs-1-4 s-1-4 m-1-4 l-1-4 xl-1-4 island">
             <img src="images/place-holder.png" class="img-flex venue-img push">
           </div>
@@ -116,9 +125,59 @@
           </div>
         </div>
 
-        <p class="text-center mega">We invite guests to dress in formal attire for the evening. Elegant, floor-length gowns for the ladies are encouraged, while gentlemen can opt to wear tailored suits or tuxedos. There’s no such thing as being overdressed!</p>
-        <p class="text-center greek-body nano">Προσκαλούμε τους καλεσμένους να επιλέξουν επίσημη ενδυμασία για τη βραδιά. Για τις κυρίες, προτείνονται κομψές τουαλέτες, ενώ οι κύριοι μπορούν να επιλέξουν κοστούμια ή σμόκιν. Δεν υπάρχει περίπτωση να είστε «υπερβολικά» ντυμένοι!</p>
+        <p class="text-center mega fade-in">We invite guests to dress in formal attire for the evening. Elegant, floor-length gowns for the ladies are encouraged, while gentlemen can opt to wear tailored suits or tuxedos. There’s no such thing as being overdressed!</p>
+        <p class="text-center greek-body nano fade-in">Προσκαλούμε τους καλεσμένους να επιλέξουν επίσημη ενδυμασία για τη βραδιά. Για τις κυρίες, προτείνονται κομψές τουαλέτες, ενώ οι κύριοι μπορούν να επιλέξουν κοστούμια ή σμόκιν. Δεν υπάρχει περίπτωση να είστε «υπερβολικά» ντυμένοι!</p>
+
+        <h2 class="blue small-caps text-center nina push-0 subhead fade-in">Wedding party</h2>
+        <h3 class="blue text-center giga greek-heading push fade-in" lang="el">Γαμήλια παρέα</h3>
+        <div class="grid">
+          <div class="unit xs-1-2 s-1-2 m-1-2 l-1-2 xl-1-2 island fade-in">
+            <img src="images/place-holder.png" class="img-flex venue-img push">
+            <h4 class="blue small-caps text-center pita push-0 subhead fade-in">Madison Turner</h4>
+            <h5 class="blue text-center micro greek-heading push fade-in" lang="el">Μάντισον Τέρνερ</h5>
+          </div>
+          <div class="unit xs-1-2 s-1-2 m-1-2 l-1-2 xl-1-2 island fade-in">
+            <img src="images/place-holder.png" class="img-flex venue-img push">
+            <h4 class="blue small-caps text-center pita push-0 subhead fade-in">Georgia Tsigos</h4>
+            <h5 class="blue text-center micro greek-heading push fade-in" lang="el">Γεωργία Τσίγος</h5>
+          </div>
+          <div class="unit xs-1-2 s-1-2 m-1-2 l-1-2 xl-1-2 island fade-in">
+            <img src="images/place-holder.png" class="img-flex venue-img push">
+            <h4 class="blue small-caps text-center pita push-0 subhead fade-in">Abigail Sutherland</h4>
+            <h5 class="blue text-center micro greek-heading push fade-in" lang="el">Άμπιγκεϊλ Σάδερλαντ</h5>
+          </div>
+          <div class="unit xs-1-2 s-1-2 m-1-2 l-1-2 xl-1-2 island fade-in">
+            <img src="images/place-holder.png" class="img-flex venue-img push">
+            <h4 class="blue small-caps text-center pita push-0 subhead fade-in">Kaitlyn Breault</h4>
+            <h5 class="blue text-center micro greek-heading push fade-in" lang="el">Κέιτλιν Μπρό</h5>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="unit xs-1-2 s-1-2 m-1-2 l-1-2 xl-1-2 island fade-in">
+            <img src="images/place-holder.png" class="img-flex venue-img push">
+            <h4 class="blue small-caps text-center pita push-0 subhead fade-in">Nathan Hertner</h4>
+            <h5 class="blue text-center micro greek-heading push fade-in" lang="el">Νέιθαν Χέρτνερ</h5>
+          </div>
+          <div class="unit xs-1-2 s-1-2 m-1-2 l-1-2 xl-1-2 island fade-in">
+            <img src="images/place-holder.png" class="img-flex venue-img push">
+            <h4 class="blue small-caps text-center pita push-0 subhead fade-in">Carter Hertner</h4>
+            <h5 class="blue text-center micro greek-heading push fade-in" lang="el">Κάρτερ Χέρτνερ</h5>
+          </div>
+          <div class="unit xs-1-2 s-1-2 m-1-2 l-1-2 xl-1-2 island fade-in">
+            <img src="images/place-holder.png" class="img-flex venue-img push">
+            <h4 class="blue small-caps text-center pita push-0 subhead fade-in">Robert Abbott</h4>
+            <h5 class="blue text-center micro greek-heading push fade-in" lang="el">Ρόμπερτ Άμποτ</h5>
+          </div>
+          <div class="unit xs-1-2 s-1-2 m-1-2 l-1-2 xl-1-2 island fade-in">
+            <img src="images/place-holder.png" class="img-flex venue-img push">
+            <h4 class="blue small-caps text-center pita push-0 subhead fade-in">Mackenzie Dawe</h4>
+            <h5 class="blue text-center micro greek-heading push fade-in" lang="el">Μακένζι Ντόου</h5>
+          </div>
+        </div>
+
       </div>
+      <p class="text-center greek-body nano fade-in"></p>
 
       <div class="top-btn-container push-2">
         <a href="#top" class="top-btn text-upper"><i class="fa-solid fa-caret-up" aria-hidden="true"></i><span class="mega">Back to top</span><i class="fa-solid fa-caret-up" aria-hidden="true"></i> <br><span lang="el" class="greek-body pico">Επιστροφή στην κορυφή</span></a>

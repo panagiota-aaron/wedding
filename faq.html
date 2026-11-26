@@ -14,100 +14,109 @@
   <link rel="shortcut icon" href="favicon.ico"/>
   <script src="https://kit.fontawesome.com/d56986af50.js" crossorigin="anonymous"></script>
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+});
+</script>
   <body id="top">
     <header class="">
-      <!--<ul class="nav grid">
-
-        <li class="unit xs-1-3 s-1-3 m-1-5 unit-offset-m-1 l-1-5 unit-offset-l-1 xl-1-5 unit-offset-xl-1">
-          <a href="details.html" class="nav-item" aria-label="">
-            <span class="push-0 milli text-upper nav-en">Details</span><br>
-            <span lang="el" class="pico greek-body">Λεπτομέρειες</span>
-          </a>
-        </li>
-        <li class="unit xs-1-3 s-1-3 m-1-5 l-1-5 xl-1-5">
-          <a href="index.html" class="nav-logo" aria-label="A link to the home page of the website.">
-            <i class="icon">
-              <img class="logo img-flex" src="images/logo.png" alt="A personal logo for the website">
-            </i>
-          </a>
-        </li>
-        <li class="unit xs-1-3 s-1-3 m-1-5 l-1-5 xl-1-5">
-          <a href="faq.html" class="active nav-item" aria-label="">
-            <span class="push-0 milli text-upper nav-en">FAQ</span><br>
-            <span lang="el" class="pico greek-body">Ερωτήσεις</span>
-          </a>
-        </li>
-
-      </ul>-->
       <nav class="max-length">
-        <ul class="nav">
-          <li class="">
+        <ul class="nav grid fade-in">
+
+          <li class="unit xs-1-3 s-1-3 m-1-5 unit-offset-m-1 l-1-5 unit-offset-l-1 xl-1-5 unit-offset-xl-1">
+            <a href="details.html" class="nav-item" aria-label="">
+              <span class="push-0 milli text-upper nav-en">Details</span><br>
+              <span lang="el" class="pico greek-body">Λεπτομέρειες</span>
+            </a>
+          </li>
+          <li class="unit xs-1-3 s-1-3 m-1-5 l-1-5 xl-1-5">
             <a href="index.html" class="nav-logo" aria-label="A link to the home page of the website.">
               <i class="icon">
                 <img class="logo img-flex" src="images/logo.png" alt="A personal logo for the website">
               </i>
             </a>
           </li>
+          <li class="unit xs-1-3 s-1-3 m-1-5 l-1-5 xl-1-5">
+            <a href="faq.html" class="nav-item active" aria-label="">
+              <span class="push-0 milli text-upper nav-en">FAQ</span><br>
+              <span lang="el" class="pico greek-body">Ερωτήσεις</span>
+            </a>
+          </li>
+
         </ul>
+
       </nav>
 
     <div class="text-center">
-      <h1 class="h1 h1-faq">Frequently asked questions</h1>
-      <h2 class="greek-body push-2" lang="el">Συχνές ερωτήσεις</h2>
+      <h1 class="h1 h1-faq fade-in">Frequently asked questions</h1>
+      <h2 class="greek-body push-2 fade-in" lang="el">Συχνές ερωτήσεις</h2>
     </div>
 
   </header>
     <main>
       <div class="max-length push-2 gutter">
-        <h2 class="blue small-caps text-center yotta push-0 subhead">How do I RSVP?</h2>
-        <h3 class="blue text-center mega greek-heading push-2" lang="el">Πώς μπορώ να επιβεβαιώσω την παρουσία μου;</h3>
-        <p class="text-center mega">Your invitation will include an RSVP card for each guest in your party, allowing each individual to indicate their attendance and meal selection. We kindly ask that each guest's RSVP card be returned, regardless of whether they are able to attend. You may RSVP by sending your RSVP cards to us directly. An envelope with our address has been included in the invitation for your convenience.</p>
-        <p class="text-center greek-body nano push-2">Η πρόσκλησή σας περιλαμβάνει μια κάρτα επιβεβαίωσης παρουσίας (RSVP) για κάθε καλεσμένο, μέσω της οποίας ο καθένας μπορεί να δηλώσει αν θα παρευρεθεί, καθώς και την επιλογή γεύματός του. Παρακαλούμε θερμά να επιστρέψετε την κάρτα επιβεβαίωσης, ανεξάρτητα από το αν θα μπορέσετε να παρευρεθείτε ή όχι. Μπορείτε να επιβεβαιώσετε την παρουσία σας στέλνοντάς μας απευθείας τις σχετικές κάρτες. Για τη διευκόλυνσή σας, στην πρόσκληση περιλαμβάνεται φάκελος που φέρει ήδη τη διεύθυνσή μας.</p>
+        <h2 class="blue small-caps text-center yotta push-0 subhead fade-in">How do I RSVP?</h2>
+        <h3 class="blue text-center mega greek-heading push-2 fade-in" lang="el">Πώς μπορώ να επιβεβαιώσω την παρουσία μου;</h3>
+        <p class="text-center mega fade-in">Your invitation will include an RSVP card for each guest in your party, allowing each individual to indicate their attendance and meal selection. We kindly ask that each guest's RSVP card be returned, regardless of whether they are able to attend. You may RSVP by sending your RSVP cards to us directly. An envelope with our address has been included in the invitation for your convenience.</p>
+        <p class="text-center greek-body nano push-2 fade-in">Η πρόσκλησή σας περιλαμβάνει μια κάρτα επιβεβαίωσης παρουσίας (RSVP) για κάθε καλεσμένο, μέσω της οποίας ο καθένας μπορεί να δηλώσει αν θα παρευρεθεί, καθώς και την επιλογή γεύματός του. Παρακαλούμε θερμά να επιστρέψετε την κάρτα επιβεβαίωσης, ανεξάρτητα από το αν θα μπορέσετε να παρευρεθείτε ή όχι. Μπορείτε να επιβεβαιώσετε την παρουσία σας στέλνοντάς μας απευθείας τις σχετικές κάρτες. Για τη διευκόλυνσή σας, στην πρόσκληση περιλαμβάνεται φάκελος που φέρει ήδη τη διεύθυνσή μας.</p>
 
-        <h2 class="blue small-caps text-center yotta push-0 subhead">How long do I have to RSVP?</h2>
-        <h3 class="blue text-center mega greek-heading push-2" lang="el">Μέχρι πότε πρέπει να επιβεβαιώσω την παρουσία μου;</h3>
-        <p class="text-center mega">We kindly ask that you RSVP before August 15th, 2027. If we do not receive any correspondence from you by this date, we will assume that you have respectfully declined the invitation to attend the wedding.</p>
-        <p class="text-center greek-body nano push-2">Παρακαλούμε θερμά να μας ενημερώσετε για την παρουσία σας έως τις 15 Αυγούστου 2027. Εάν δεν λάβουμε κάποια απάντηση από εσάς μέχρι την ημερομηνία αυτή, θα θεωρήσουμε ότι έχετε επιλέξει ευγενικά να μην παρευρεθείτε στον γάμο.</p>
+        <h2 class="blue small-caps text-center yotta push-0 subhead fade-in">How long do I have to RSVP?</h2>
+        <h3 class="blue text-center mega greek-heading push-2 fade-in" lang="el">Μέχρι πότε πρέπει να επιβεβαιώσω την παρουσία μου;</h3>
+        <p class="text-center mega fade-in">We kindly ask that you RSVP before August 15th, 2027. If we do not receive any correspondence from you by this date, we will assume that you have respectfully declined the invitation to attend the wedding.</p>
+        <p class="text-center greek-body nano push-2 fade-in">Παρακαλούμε θερμά να μας ενημερώσετε για την παρουσία σας έως τις 15 Αυγούστου 2027. Εάν δεν λάβουμε κάποια απάντηση από εσάς μέχρι την ημερομηνία αυτή, θα θεωρήσουμε ότι έχετε επιλέξει ευγενικά να μην παρευρεθείτε στον γάμο.</p>
 
-        <h2 class="blue small-caps text-center yotta push-0 subhead">Can I bring a plus one?</h2>
-        <h3 class="blue text-center mega greek-heading push-2" lang="el">Μπορώ να φέρω κάποιον καλεσμένο;</h3>
+        <h2 class="blue small-caps text-center yotta push-0 subhead fade-in">Can I bring a plus one?</h2>
+        <h3 class="blue text-center mega greek-heading push-2 fade-in" lang="el">Μπορώ να φέρω κάποιον καλεσμένο;</h3>
         <p class="text-center mega">We respectfully request that only guests named on their formal invitation be in attendance at the wedding.</p>
-        <p class="text-center greek-body nano push-2">Παρακαλούμε θερμά, στον γάμο να παρευρεθούν μόνο οι προσκεκλημένοι των οποίων τα ονόματα αναγράφονται στην επίσημη πρόσκλησή τους.</p>
+        <p class="text-center greek-body nano push-2 fade-in">Παρακαλούμε θερμά, στον γάμο να παρευρεθούν μόνο οι προσκεκλημένοι των οποίων τα ονόματα αναγράφονται στην επίσημη πρόσκλησή τους.</p>
 
-        <h2 class="blue small-caps text-center yotta push-0 subhead">Can children attend?</h2>
-        <h3 class="blue text-center mega greek-heading push-2" lang="el">Μπορούν να παρευρεθούν παιδιά;</h3>
-        <p class="text-center mega">We love and adore all the little ones in our lives. To honour our intent for an intimate evening, we have chosen to host an adults-only wedding. We appreciate your understanding.</p>
-        <p class="text-center greek-body nano push-2">Αγαπάμε και λατρεύουμε όλα τα μικρά παιδιά στη ζωή μας. Προκειμένου να διασφαλίσουμε μια ατμόσφαιρα στενού κύκλου, επιλέξαμε να πραγματοποιήσουμε έναν γάμο αποκλειστικά για ενήλικες. Σας ευχαριστούμε για την κατανόησή σας.</p>
+        <h2 class="blue small-caps text-center yotta push-0 subhead fade-in">Can children attend?</h2>
+        <h3 class="blue text-center mega greek-heading push-2 fade-in" lang="el">Μπορούν να παρευρεθούν παιδιά;</h3>
+        <p class="text-center mega fade-in">We love and adore all the little ones in our lives. To honour our intent for an intimate evening, we have chosen to host an adults-only wedding. We appreciate your understanding.</p>
+        <p class="text-center greek-body nano push-2 fade-in">Αγαπάμε και λατρεύουμε όλα τα μικρά παιδιά στη ζωή μας. Προκειμένου να διασφαλίσουμε μια ατμόσφαιρα στενού κύκλου, επιλέξαμε να πραγματοποιήσουμε έναν γάμο αποκλειστικά για ενήλικες. Σας ευχαριστούμε για την κατανόησή σας.</p>
 
-        <h2 class="blue small-caps text-center yotta push-0 subhead">When should I arrive at the church?</h2>
-        <h3 class="blue text-center mega greek-heading push-2" lang="el">Πότε πρέπει να φτάσω στην εκκλησία;</h3>
-        <p class="text-center mega">We would be grateful if all guests arrive at the church by 2:45PM at the latest, as we are scheduled to begin the ceremony on time at 3:00PM.</p>
-        <p class="text-center greek-body nano push-2">Θα σας ήμασταν ευγνώμονες αν όλοι οι καλεσμένοι έφταναν στην εκκλησία το αργότερο μέχρι τις 2:45 μ.μ., καθώς η τελετή είναι προγραμματισμένο να ξεκινήσει ακριβώς στις 3:00 μ.μ.</p>
+        <h2 class="blue small-caps text-center yotta push-0 subhead fade-in">When should I arrive at the church?</h2>
+        <h3 class="blue text-center mega greek-heading push-2 fade-in" lang="el">Πότε πρέπει να φτάσω στην εκκλησία;</h3>
+        <p class="text-center mega fade-in">We would be grateful if all guests arrive at the church by 2:45PM at the latest, as we are scheduled to begin the ceremony on time at 3:00PM.</p>
+        <p class="text-center greek-body nano push-2 fade-in">Θα σας ήμασταν ευγνώμονες αν όλοι οι καλεσμένοι έφταναν στην εκκλησία το αργότερο μέχρι τις 2:45 μ.μ., καθώς η τελετή είναι προγραμματισμένο να ξεκινήσει ακριβώς στις 3:00 μ.μ.</p>
 
-        <h2 class="blue small-caps text-center yotta push-0 subhead">Can I take photos during the ceremony?</h2>
-        <h3 class="blue text-center mega greek-heading push-2" lang="el">Μπορώ να βγάλω φωτογραφίες κατά τη διάρκεια της τελετής;</h3>
-        <p class="text-center mega">We kindly ask that phones be silenced and put away as the ceremony takes place.</p>
-        <p class="text-center greek-body nano push-2">Παρακαλούμε θερμά, κατά τη διάρκεια της τελετής, τα κινητά τηλέφωνα να είναι σε σίγαση και φυλαγμένα.</p>
+        <h2 class="blue small-caps text-center yotta push-0 subhead fade-in">Can I take photos during the ceremony?</h2>
+        <h3 class="blue text-center mega greek-heading push-2 fade-in" lang="el">Μπορώ να βγάλω φωτογραφίες κατά τη διάρκεια της τελετής;</h3>
+        <p class="text-center mega fade-in">We kindly ask that phones be silenced and put away as the ceremony takes place.</p>
+        <p class="text-center greek-body nano push-2 fade-in">Παρακαλούμε θερμά, κατά τη διάρκεια της τελετής, τα κινητά τηλέφωνα να είναι σε σίγαση και φυλαγμένα.</p>
 
-        <h2 class="blue small-caps text-center yotta push-0 subhead">How should I get from the ceremony venue to the reception venue?</h2>
-        <h3 class="blue text-center mega greek-heading push-2" lang="el">Πώς μπορώ να μεταβώ από τον χώρο της τελετής στον χώρο της δεξίωσης;</h3>
-        <p class="text-center mega">The reception hall is located approximately 15 minutes from the church, and is accessible by car, Uber, taxi, and public transportation. For guests staying both Friday and Saturday night, an alternative shuttle service is available on a first come, first serve basis. More information can be found in the <a href="details.html#transportation" class="link">Transportation section on the details page</a>.</p>
-        <p class="text-center greek-body nano push-2">Ο χώρος της δεξίωσης βρίσκεται σε απόσταση περίπου 15 λεπτών από την εκκλησία και είναι προσβάσιμος με αυτοκίνητο, Uber, ταξί ή μέσα μαζικής μεταφοράς. Για τους καλεσμένους που διαμένουν εκεί τόσο την Παρασκευή όσο και το Σάββατο το βράδυ, διατίθεται εναλλακτικά υπηρεσία μεταφοράς (shuttle), με σειρά προτεραιότητας. Περισσότερες πληροφορίες μπορείτε να βρείτε στην <a href="details.html#transportation" class="link">ενότητα «Μετακίνηση» στη σελίδα με τις λεπτομέρειες</a>.</p>
+        <h2 class="blue small-caps text-center yotta push-0 subhead fade-in">How should I get from the ceremony venue to the reception venue?</h2>
+        <h3 class="blue text-center mega greek-heading push-2 fade-in" lang="el">Πώς μπορώ να μεταβώ από τον χώρο της τελετής στον χώρο της δεξίωσης;</h3>
+        <p class="text-center mega fade-in">The reception hall is located approximately 15 minutes from the church, and is accessible by car, Uber, taxi, and public transportation. For guests staying both Friday and Saturday night, an alternative shuttle service is available on a first come, first serve basis. More information can be found in the <a href="details.html#transportation" class="link">Transportation section on the details page</a>.</p>
+        <p class="text-center greek-body nano push-2 fade-in">Ο χώρος της δεξίωσης βρίσκεται σε απόσταση περίπου 15 λεπτών από την εκκλησία και είναι προσβάσιμος με αυτοκίνητο, Uber, ταξί ή μέσα μαζικής μεταφοράς. Για τους καλεσμένους που διαμένουν εκεί τόσο την Παρασκευή όσο και το Σάββατο το βράδυ, διατίθεται εναλλακτικά υπηρεσία μεταφοράς (shuttle), με σειρά προτεραιότητας. Περισσότερες πληροφορίες μπορείτε να βρείτε στην <a href="details.html#transportation" class="link">ενότητα «Μετακίνηση» στη σελίδα με τις λεπτομέρειες</a>.</p>
 
-        <h2 class="blue small-caps text-center yotta push-0 subhead">Where should I park at the reception venue?</h2>
-        <h3 class="blue text-center mega greek-heading push-2" lang="el">Πού πρέπει να παρκάρω στον χώρο της δεξίωσης;</h3>
-        <p class="text-center mega">Valet parking is reserved for hotel guests only. There is unfortunately no parking available on site at the Fairmont for guests attending the wedding for the day only. We do, however, have many parking options available to you, which can be found in the <a href="details.html#parking" class="link">Parking section on the details page</a>.</p>
-        <p class="text-center greek-body nano push-2">Η υπηρεσία στάθμευσης (valet parking) προορίζεται αποκλειστικά για τους διαμένοντες στο ξενοδοχείο. Δυστυχώς, δεν υπάρχει διαθέσιμος χώρος στάθμευσης στις εγκαταστάσεις του Fairmont για τους καλεσμένους του γάμου που θα παρευρεθούν μόνο για τη διάρκεια της εκδήλωσης. Ωστόσο, υπάρχουν αρκετές άλλες επιλογές στάθμευσης, τις οποίες μπορείτε να βρείτε στην <a href="details.html#parking" class="link">ενότητα «Στάθμευση» (Parking) στη σελίδα με τις λεπτομέρειες</a>.</p>
+        <h2 class="blue small-caps text-center yotta push-0 subhead fade-in">Where should I park at the reception venue?</h2>
+        <h3 class="blue text-center mega greek-heading push-2 fade-in" lang="el">Πού πρέπει να παρκάρω στον χώρο της δεξίωσης;</h3>
+        <p class="text-center mega fade-in">Valet parking is reserved for hotel guests only. There is unfortunately no parking available on site at the Fairmont for guests attending the wedding for the day only. We do, however, have many parking options available to you, which can be found in the <a href="details.html#parking" class="link">Parking section on the details page</a>.</p>
+        <p class="text-center greek-body nano push-2 fade-in">Η υπηρεσία στάθμευσης (valet parking) προορίζεται αποκλειστικά για τους διαμένοντες στο ξενοδοχείο. Δυστυχώς, δεν υπάρχει διαθέσιμος χώρος στάθμευσης στις εγκαταστάσεις του Fairmont για τους καλεσμένους του γάμου που θα παρευρεθούν μόνο για τη διάρκεια της εκδήλωσης. Ωστόσο, υπάρχουν αρκετές άλλες επιλογές στάθμευσης, τις οποίες μπορείτε να βρείτε στην <a href="details.html#parking" class="link">ενότητα «Στάθμευση» (Parking) στη σελίδα με τις λεπτομέρειες</a>.</p>
 
-        <h2 class="blue small-caps text-center yotta push-0 subhead">What if I have dietary restrictions?</h2>
-        <h3 class="blue text-center mega greek-heading push-2" lang="el">Τι γίνεται αν έχω διατροφικούς περιορισμούς;</h3>
-        <p class="text-center mega">Please let us know of any dietary restrictions or allergies when submitting your RSVP. We want to ensure everyone can comfortably enjoy the evening!</p>
-        <p class="text-center greek-body nano push-2">Παρακαλούμε ενημερώστε μας για τυχόν διατροφικούς περιορισμούς ή αλλεργίες κατά την επιβεβαίωση της παρουσίας σας. Θέλουμε να διασφαλίσουμε ότι όλοι θα μπορέσουν να απολαύσουν τη βραδιά με άνεση!</p>
+        <h2 class="blue small-caps text-center yotta push-0 subhead fade-in">What if I have dietary restrictions?</h2>
+        <h3 class="blue text-center mega greek-heading push-2 fade-in" lang="el">Τι γίνεται αν έχω διατροφικούς περιορισμούς;</h3>
+        <p class="text-center mega fade-in">Please let us know of any dietary restrictions or allergies when submitting your RSVP. We want to ensure everyone can comfortably enjoy the evening!</p>
+        <p class="text-center greek-body nano push-2 fade-in">Παρακαλούμε ενημερώστε μας για τυχόν διατροφικούς περιορισμούς ή αλλεργίες κατά την επιβεβαίωση της παρουσίας σας. Θέλουμε να διασφαλίσουμε ότι όλοι θα μπορέσουν να απολαύσουν τη βραδιά με άνεση!</p>
 
-        <h2 class="blue small-caps text-center yotta push-0 subhead">Who should I contact for any other questions I may have?</h2>
-        <h3 class="blue text-center mega greek-heading push-2" lang="el">Με ποιον πρέπει να επικοινωνήσω για τυχόν άλλες ερωτήσεις που μπορεί να έχω;</h3>
-        <p class="text-center mega">Should you have any further questions or concerns, please reach out by calling or texting Panagiota-Patricia at (613) 290-6919 or Aaron at (613) 809-4103.</p>
-        <p class="text-center greek-body nano push-2">Εάν έχετε περαιτέρω ερωτήσεις ή προβληματισμούς, παρακαλούμε επικοινωνήστε καλώντας ή στέλνοντας μήνυμα στην Παναγιώτα-Πατρίτσια στο (613) 290-6919 ή στον Aaron στο (613) 809-4103.</p>
+        <h2 class="blue small-caps text-center yotta push-0 subhead fade-in">Who should I contact for any other questions I may have?</h2>
+        <h3 class="blue text-center mega greek-heading push-2 fade-in" lang="el">Με ποιον πρέπει να επικοινωνήσω για τυχόν άλλες ερωτήσεις που μπορεί να έχω;</h3>
+        <p class="text-center mega fade-in">Should you have any further questions or concerns, please reach out by calling or texting Panagiota-Patricia at (613) 290-6919 or Aaron at (613) 809-4103.</p>
+        <p class="text-center greek-body nano push-2 fade-in">Εάν έχετε περαιτέρω ερωτήσεις ή προβληματισμούς, παρακαλούμε επικοινωνήστε καλώντας ή στέλνοντας μήνυμα στην Παναγιώτα-Πατρίτσια στο (613) 290-6919 ή στον Aaron στο (613) 809-4103.</p>
 
       </div>
 
